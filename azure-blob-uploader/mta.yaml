@@ -1,0 +1,14 @@
+version: 3
+ID: azure-blob-uploader
+description: "Aplicación Node.js para cargar archivos a Azure Blob Storage"
+modules:
+  - name: azure-blob-uploader-nodejs
+    type: nodejs
+    path: .
+    parameters:
+      memory: 256M
+      buildpack: nodejs_buildpack
+    properties:
+      environment:
+        AZURE_STORAGE_CONNECTION_STRING: ${AZURE_STORAGE_CONNECTION_STRING}
+        CONTAINER_NAME: ${CONTAINER_NAME}
